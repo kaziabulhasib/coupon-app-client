@@ -28,7 +28,11 @@ const ClaimCoupon = () => {
       <h1>Claim Your Coupon</h1>
       <button onClick={claimCoupon}>Claim Coupon</button>
 
-      {message && <p>{message}</p>}
+      {message && (
+        <p className={message.includes("Try again in") ? "error-message" : ""}>
+          {message}
+        </p>
+      )}
       {coupon && (
         <p>
           Your Coupon: <strong>{coupon}</strong>
